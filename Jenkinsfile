@@ -23,6 +23,18 @@ pipeline {
 				echo "BUILD_URL - $env.BUILD_URL"
 			}
 		}
+
+		stage('Check Docker') {
+            steps {
+                sh 'docker --version'
+                sh 'docker info'
+            }
+        }stage('Check Docker') {
+             steps {
+                 sh 'docker --version'
+                 sh 'docker info'
+             }
+         }
 		stage('Compile') {
 			steps {
 				sh "mvn clean compile"
