@@ -55,7 +55,6 @@ pipeline {
 
 		stage('Build Docker Image') {
 			steps {
-				//"docker build -t in28min/currency-exchange-devops:$env.BUILD_TAG"
 				script {
 					dockerImage = docker.build("boris1030/e-book-store:${env.BUILD_TAG}")
 				}
